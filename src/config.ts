@@ -26,9 +26,9 @@ switch (process.env.NODE_ENV) {
     DB_HOST = process.env.DB_HOST_TEST as string;
 }
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 const SECRET_KEY = process.env.SECRET_KEY as string;
-const SALT = process.env.SALT as string;
+const SALT = process.env.SALT || '11';
 const COOKIE_EXPIRE_TIME = (process.env.COOKIE_EXPIRE_TIME ||
   2 * 60 * 60) as number; // 2hours
 
