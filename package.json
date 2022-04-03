@@ -4,10 +4,10 @@
   "description": "todo app",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
+    "build": "tsc",
     "start": "NODE_ENV=production ts-node-dev src/index.ts",
     "dev": "NODE_ENV=development ts-node-dev src/index.ts",
-    "lint": "eslint --ext .ts .",
+    "eslint": "eslint --ext .ts .",
     "test": "NODE_ENV=test jest --verbose --runInBand",
     "start:test": "NODE_ENV=test ts-node-dev src/index.ts",
     "cypress:open": "cypress open",
