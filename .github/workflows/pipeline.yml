@@ -28,6 +28,11 @@ jobs:
       # - name: build
       #   run: npm run build
       - name: npm run test
+        env: |
+          DB_NAME_PRODUCTION=${{ secrets.DB_NAME_PRODUCTION }}
+          DB_USER_PRODUCTION=${{ secrets.DB_USER_PRODUCTION }}
+          DB_PASSWORD_PRODUCTION=${{ secrets.DB_PASSWORD_PRODUCTION }}
+          DB_HOST_PRODUCTION=${{ secrets.DB_HOST_PRODUCTION }}
         run: npm run test
       - name: e2e tests
         uses: cypress-io/github-action@v2
