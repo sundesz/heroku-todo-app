@@ -1,0 +1,29 @@
+GET http://localhost:3001/api/v1/tasks
+
+
+###
+POST http://localhost:3001/api/v1/tasks
+Content-Type: application/json
+
+{
+  "contents": "sandesh 1"
+}
+
+
+###
+PUT http://localhost:3001/api/v1/tasks/2aef62a9-3f57-477d-ac16-ce37ab6986ad
+Content-Type: application/json
+
+{
+  "isCompleted": "true"
+}
+
+
+###
+
+DELETE http://localhost:3001/api/v1/tasks/25fbca09-b263-4831-8b88-ce27e7947dca
+Content-Type: application/json
+
+
+###
+POST http://localhost:3001/api/v1/testing/reset
