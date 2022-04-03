@@ -44,8 +44,8 @@ app.get('/', (_req: Request, res: Response) => {
   res.send('<h1>Sandesh Hyoju - Todo app</h1>');
 });
 
-app.get('/ping', (_req: Request, res: Response) => {
-  res.send('pong');
+app.get('/health', (_req: Request, res: Response) => {
+  res.send('ok');
 });
 
 app.use('/api/v1/users', userRouter);
