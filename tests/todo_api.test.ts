@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import supertest from 'supertest';
+import { expect } from '@jest/globals';
 import app from '../src/app';
 import { connectToDatabase } from '../src/db';
 import { Task, User } from '../src/db/models';
@@ -34,7 +35,7 @@ beforeEach(async () => {
 });
 
 test('test', async function () {
-  await api.get('/ping').expect(200);
+  await api.get('/health').expect(200);
 });
 
 describe('login', () => {

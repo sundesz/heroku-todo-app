@@ -8,7 +8,10 @@
     "start": "NODE_ENV=production ts-node-dev src/index.ts",
     "dev": "NODE_ENV=development ts-node-dev src/index.ts",
     "lint": "eslint --ext .ts .",
-    "test": "NODE_ENV=test jest --verbose --runInBand"
+    "test": "NODE_ENV=test jest --verbose --runInBand",
+    "start:test": "NODE_ENV=test ts-node-dev src/index.ts",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "author": "Sandesh Hyoju",
   "license": "ISC",
@@ -25,6 +28,7 @@
     "@types/umzug": "^2.3.3",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
+    "cypress": "^9.5.3",
     "eslint": "^8.7.0",
     "jest": "^27.4.7",
     "supertest": "^6.2.2",

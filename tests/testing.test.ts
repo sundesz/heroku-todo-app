@@ -1,3 +1,4 @@
+import { expect } from '@jest/globals';
 import { palindrome } from '../src/utils/for_testing';
 
 test('palindrome of a ', () => {
