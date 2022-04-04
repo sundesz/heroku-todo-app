@@ -23,14 +23,14 @@ jobs:
         run: env
       - name: npm install
         run: npm install
-      - name: create env file
-        run: |
-          touch .env
-          echo DB_NAME_PRODUCTION=${{ secrets.DB_NAME_PRODUCTION }} >> .env
-          echo DB_USER_PRODUCTION=${{ secrets.DB_USER_PRODUCTION }} >> .env
-          echo DB_PASSWORD_PRODUCTION=${{ secrets.DB_PASSWORD_PRODUCTION }} >> .env
-          echo DB_HOST_PRODUCTION=${{ secrets.DB_HOST_PRODUCTION }} >> .env
-          echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
+      # - name: create env file
+      #   run: |
+      #     touch .env
+      #     echo DB_NAME_PRODUCTION=${{ secrets.DB_NAME_PRODUCTION }} >> .env
+      #     echo DB_USER_PRODUCTION=${{ secrets.DB_USER_PRODUCTION }} >> .env
+      #     echo DB_PASSWORD_PRODUCTION=${{ secrets.DB_PASSWORD_PRODUCTION }} >> .env
+      #     echo DB_HOST_PRODUCTION=${{ secrets.DB_HOST_PRODUCTION }} >> .env
+      #     echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
       - name: lint
         run: npm run eslint
       # - name: build
