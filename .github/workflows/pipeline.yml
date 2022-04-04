@@ -5,11 +5,27 @@ on:
     branches:
       - main
 
+# env:
+# DB_NAME_PRODUCTION: d95n2p8leg6gqe
+# DB_USER_PRODUCTION: iwthiamaxyxkpt
+# DB_PASSWORD_PRODUCTION: ${{ secrets.DB_PASSWORD_PRODUCTION }}
+# DB_HOST_PRODUCTION: ec2-63-32-248-14.eu-west-1.compute.amazonaws.com
+
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+
+      - name: Make env file
+        uses: ./
+        with:
+          DB_NAME_PRODUCTION: d95n2p8leg6gqe
+          DB_USER_PRODUCTION: iwthiamaxyxkpt
+          DB_PASSWORD_PRODUCTION: ${{ secrets.DB_PASSWORD_PRODUCTION }}
+          DB_HOST_PRODUCTION: ec2-63-32-248-14.eu-west-1.compute.amazonaws.com
+          file_name: .env
+
       - name: create env file
         run: |
           touch .env
