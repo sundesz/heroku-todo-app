@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+      - name: npm install
+        run: npm install
       - name: create env file
         run: |
           touch .env
@@ -21,8 +23,6 @@ jobs:
           echo DB_PASSWORD_PRODUCTION=${{ secrets.DB_PASSWORD_PRODUCTION }} >> .env
           echo DB_HOST_PRODUCTION=${{ secrets.DB_HOST_PRODUCTION }} >> .env
           echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
-      - name: npm install
-        run: npm install
       - name: lint
         run: npm run eslint
       # - name: build
