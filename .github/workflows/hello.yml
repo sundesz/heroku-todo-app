@@ -7,7 +7,7 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
-  DB_NAME: ${{ secrets.DB_NAME_PRODUCTION }}
+  DB_NAME: ${{ secrets.DB_NAME }}
 
 jobs:
   hello_world_job:
