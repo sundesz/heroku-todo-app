@@ -5,10 +5,14 @@ on:
     branches:
       - main
 
+env:
+  DAY_OF_WEEK: Monday
+  DB_NAME: ${{ secrets.DB_NAME_PRODUCTION }}
+
 jobs:
   hello_world_job:
     runs-on: ubuntu-20.04
     steps:
       - name: Say hello
         run: |
-          echo "Hello World"
+          echo "Hello World $DAY_OF_WEEK $DB_NAME"
