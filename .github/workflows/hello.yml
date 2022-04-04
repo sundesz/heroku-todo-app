@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Say hello
         run: |
-          echo "Hello World $DAY_OF_WEEK $DB_NAME"
+          echo "Hello World! Today is $DAY_OF_WEEK $DB_NAME"
