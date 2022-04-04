@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+      - name: list all env variables
+        run: env
       - name: npm install
         run: npm install
       - name: create env file
