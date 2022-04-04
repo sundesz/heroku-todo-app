@@ -7,7 +7,6 @@ on:
 
 env:
   DAY_OF_WEEK: Monday
-  DB_NAME: ${{ secrets.DB_NAME }}
 
 jobs:
   hello_world_job:
@@ -15,4 +14,7 @@ jobs:
     steps:
       - name: Say hello
         run: |
-          echo "Hello World! Today is $DAY_OF_WEEK $DB_NAME"
+          echo "Hello World! Today is $DAY_OF_WEEK"
+
+      - name: list all env variables
+        run: env

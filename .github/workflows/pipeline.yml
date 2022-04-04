@@ -6,10 +6,10 @@ on:
       - main
 
 env:
-  DB_NAME_PRODUCTION: ${{ secrets.DB_NAME_PRODUCTION }}
-  DB_USER_PRODUCTION: ${{ secrets.DB_USER_PRODUCTION }}
+  DB_NAME_PRODUCTION: d95n2p8leg6gqe
+  DB_USER_PRODUCTION: iwthiamaxyxkpt
   DB_PASSWORD_PRODUCTION: ${{ secrets.DB_PASSWORD_PRODUCTION }}
-  DB_HOST_PRODUCTION: ${{ secrets.DB_HOST_PRODUCTION }}
+  DB_HOST_PRODUCTION: ec2-63-32-248-14.eu-west-1.compute.amazonaws.com
 
 jobs:
   simple_deployment_pipeline:
