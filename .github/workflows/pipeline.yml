@@ -20,14 +20,14 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - name: create env file
-        # run: |
-        #   touch .env
-        #   echo DB_NAME_PRODUCTION=${{ secrets.DB_NAME_PRODUCTION }} >> .env
-        #   echo DB_USER_PRODUCTION=${{ secrets.DB_USER_PRODUCTION }} >> .env
-        #   echo DB_PASSWORD_PRODUCTION=${{ secrets.DB_PASSWORD_PRODUCTION }} >> .env
-        #   echo DB_HOST_PRODUCTION=${{ secrets.DB_HOST_PRODUCTION }} >> .env
-        #   echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
+      # - name: create env file
+      # run: |
+      #   touch .env
+      #   echo DB_NAME_PRODUCTION=${{ secrets.DB_NAME_PRODUCTION }} >> .env
+      #   echo DB_USER_PRODUCTION=${{ secrets.DB_USER_PRODUCTION }} >> .env
+      #   echo DB_PASSWORD_PRODUCTION=${{ secrets.DB_PASSWORD_PRODUCTION }} >> .env
+      #   echo DB_HOST_PRODUCTION=${{ secrets.DB_HOST_PRODUCTION }} >> .env
+      #   echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
