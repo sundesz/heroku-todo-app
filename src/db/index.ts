@@ -3,7 +3,7 @@ import { DB_HOST, DB_NAME, DB_PASSWORD, DB_USER } from '../config';
 import { Umzug, SequelizeStorage } from 'umzug';
 
 const dialectOptions =
-  process.env.NODE_ENV === 'production'
+  process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'test'
     ? {
         ssl: {
           require: true,
