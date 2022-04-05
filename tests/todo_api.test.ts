@@ -30,7 +30,7 @@ beforeEach(async () => {
   const login = await api
     .post('/api/v1/login')
     .send({ username: 'sundesz@gmail.com', password: 'sandesh' });
-
+  console.log(login.header);
   token = cookie.parse((login.header['set-cookie'][0] as string) || '').auth;
 });
 
