@@ -53,8 +53,6 @@ const login: RequestHandler = async (req, res, next: NextFunction) => {
       password: string;
     };
 
-    console.log(username, password);
-
     if (!username || !password) {
       throw new Error('Invalid username or password');
     }
@@ -64,14 +62,10 @@ const login: RequestHandler = async (req, res, next: NextFunction) => {
       return res.status(400).json({ error: 'Invalid username or password' });
     }
 
-    console.log('Yes user');
-
     const passwordCorrect = await bcrypt.compare(password, user.passwordHash);
     if (!passwordCorrect) {
       throw new Error('Invalid username or password');
     }
-
-    console.log('Password correct');
 
     loginAndRefreshTokenResponse(res, user);
   } catch (error: unknown) {
@@ -106,11 +100,8 @@ const logout: RequestHandler = (_req, res) => {
 };
 
 const loginAndRefreshTokenResponse = (res: Response, user: User) => {
-  console.log('generating token');
-
   const token = generateToken(user);
 
-  console.log('token generated', token);
   return res
     .setHeader(
       'Set-Cookie',

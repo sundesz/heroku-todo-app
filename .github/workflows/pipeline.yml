@@ -14,6 +14,7 @@ env:
   DB_USER_TEST: ${{ secrets.DB_USER_TEST }}
   DB_PASSWORD_TEST: ${{ secrets.DB_PASSWORD_TEST }}
   DB_HOST_TEST: ${{ secrets.DB_HOST_TEST }}
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
 jobs:
   simple_deployment_pipeline:
