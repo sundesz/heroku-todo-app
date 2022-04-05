@@ -78,12 +78,10 @@ describe('Todo App', function () {
 
           cy.get('#task').type('New test task 3');
           cy.get('#addtask-btn').click();
-
-          cy.get('.task-checkbox').first().click();
         });
 
         it('task can be marked done', function () {
-          cy.get('.task-checkbox').eq(1).click();
+          cy.get('.task-checkbox').first().click();
 
           cy.get('#all').click();
           cy.get('.task-detail').should(($taskDetail) => {
@@ -92,17 +90,17 @@ describe('Todo App', function () {
 
           cy.get('#complete').click();
           cy.get('.task-detail').should(($taskDetail) => {
-            expect($taskDetail).to.have.length(2);
+            expect($taskDetail).to.have.length(1);
           });
 
           cy.get('#incomplete').click();
           cy.get('.task-detail').should(($taskDetail) => {
-            expect($taskDetail).to.have.length(1);
+            expect($taskDetail).to.have.length(2);
           });
         });
 
         it('task can be marked important', function () {
-          cy.get('.task-label').eq(2).click();
+          cy.get('.task-label').first().click();
 
           cy.get('#all').click();
           cy.get('.task-detail').should(($taskDetail) => {
