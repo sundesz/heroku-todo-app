@@ -27,8 +27,6 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: list all env variables
-        run: env
       - name: npm install
         run: npm install
       - name: lint
@@ -50,6 +48,6 @@ jobs:
           heroku_app_name: 'sandesh-todo-app'
           heroku_email: 'sundesz@gmail.com'
           branch: 'main'
-          # healthcheck: 'https://learning-cicd-fullstack.herokuapp.com/health'
-          # checkstring: 'ok'
-          # rollbackonhealthcheckfailed: true
+          healthcheck: 'https://sandesh-todo-app.herokuapp.com/health'
+          checkstring: 'ok'
+          rollbackonhealthcheckfailed: true
