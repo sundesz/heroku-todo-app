@@ -3,7 +3,7 @@ name: Hello World!
 on:
   push:
     branches:
-      - main
+      - dev
 
 env:
   DAY_OF_WEEK: Monday
