@@ -106,8 +106,11 @@ const logout: RequestHandler = (_req, res) => {
 };
 
 const loginAndRefreshTokenResponse = (res: Response, user: User) => {
+  console.log('generating token');
+
   const token = generateToken(user);
-  console.log('hite');
+
+  console.log('token generated', token);
   return res
     .setHeader(
       'Set-Cookie',
