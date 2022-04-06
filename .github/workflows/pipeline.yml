@@ -65,7 +65,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
 
-  discord_notification:
+  discord_notification_success:
     needs: [tag_release]
     runs-on: ubuntu-20.04
     steps:
@@ -78,9 +78,14 @@ jobs:
           text: A new version of TodoApp is deployed!
           description: to ${{ secrets.HEROKU_APPLICATION_LINK }} by ${{ github.event.pusher.name }}.
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+
+  discord_notification_unsuccess:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
       - name: Deployment Error
         uses: rjstone/discord-webhook-notify@v1
-        if: failure() && github.event_name == 'push'
+        if: failure()
         with:
           severity: error
           text: Build failed
