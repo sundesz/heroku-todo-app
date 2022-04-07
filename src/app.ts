@@ -48,6 +48,10 @@ app.get('/health', (_req: Request, res: Response) => {
   res.send('ok');
 });
 
+app.get('/version', (_req: Request, res: Response) => {
+  res.send('1');
+});
+
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/tasks', tokenExtractor, isValidUser, taskRouter);
 app.use('/api/v1/', loginRouter);

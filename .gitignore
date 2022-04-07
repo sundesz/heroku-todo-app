@@ -2,3 +2,4 @@
 .env
 cypress/videos
 cypress/screenshots
+.vscode
